@@ -1,0 +1,15 @@
+.triangle {
+  background-color: black;
+  width: 100px;
+  aspect-ratio: 1;
+  clip-path: polygon(
+    93.3% 75%,
+    6.7% 75%,
+    50% 0%,
+    93.3% 75%,
+    calc(50% - 0px) calc(0% - -20px),
+    calc(6.7% - -17.32px) calc(75% - 10px),
+    calc(93.3% - 17.32px) calc(75% - 10px),
+    calc(50% - 0px) calc(0% - -20px)
+  );
+}
