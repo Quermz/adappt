@@ -8,9 +8,11 @@ interface shapeCoordinates {
 
 function Shape(props: shapeCoordinates) {
   let [coordinates, setCoordinates] = useState([props.x, props.y]);
+
   function asPercentage(value: Number) {
     return value.toString() + "%";
   }
+  //Change shape based on coordinates
   function findShapeType() {
     let [x, y] = [...coordinates];
     if (x >= 50 && y > 50) {
@@ -22,6 +24,7 @@ function Shape(props: shapeCoordinates) {
     }
     return "circle";
   }
+
   function handleDrag(e: React.DragEvent<HTMLDivElement>) {
     console.log(e);
     let x = checkBounds((e.pageX / window.innerWidth) * 100);
@@ -31,6 +34,7 @@ function Shape(props: shapeCoordinates) {
     setCoordinates([x, y]);
   }
 
+  //Ensure user does not move shape completely out of view
   function checkBounds(coordinate: number) {
     if (coordinate > 100) {
       return 100;
