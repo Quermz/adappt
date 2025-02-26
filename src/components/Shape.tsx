@@ -1,11 +1,20 @@
 import { useState } from "react";
 import "./Shape.css";
 
-function Shape({}) {
-  let [coordinates, setCoordinates] = useState([x, y]);
+interface shapeCoordinates {
+  x: number;
+  y: number;
+}
+
+function Shape(props: shapeCoordinates) {
+  let [coordinates, setCoordinates] = useState([props.x, props.y]);
   function asPercentage(value: Number) {
     return value.toString() + "%";
   }
+  // function findShapeType() {
+  //   let [x, y] = [...coordinates];
+  //   if(x>=50 && test)
+  // }
   return (
     <div
       draggable="true"
@@ -17,11 +26,12 @@ function Shape({}) {
         ]);
       }}
       style={{
+        position: "absolute",
         left: asPercentage(coordinates[0]),
         top: asPercentage(coordinates[1]),
       }}
     >
-      <polygon className="triangle" />
+      <div className="circle" />
     </div>
   );
 }

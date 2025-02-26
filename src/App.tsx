@@ -5,7 +5,7 @@ import Shape from "./components/Shape";
 function App() {
   return (
     <div className="container">
-      <Shape />
+      <Shape x={25} y={25} />
       <div className="quadrant topLeft" />
       <div className="quadrant topRight" />
       <div className="quadrant bottomLeft" />
