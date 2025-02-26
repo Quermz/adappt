@@ -26,7 +26,6 @@ function Shape(props: shapeCoordinates) {
   }
 
   function handleDrag(e: React.DragEvent<HTMLDivElement>) {
-    console.log(e);
     let x = checkBounds((e.pageX / window.innerWidth) * 100);
 
     let y = checkBounds((e.pageY / window.innerHeight) * 100);
