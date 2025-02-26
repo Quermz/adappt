@@ -18,22 +18,22 @@ body {
   height: 50%;
   width: 50%;
   border-style: solid;
-  border-color: lightgrey;
+  border-color: #edf2f4;
   border-width: 3px;
 }
 
 .topLeft {
-  background-color: lightsalmon;
+  background-color: #d8e2dc;
 }
 
 .topRight {
-  background-color: lightcyan;
+  background-color: #ffe5d9;
 }
 
 .bottomLeft {
-  background-color: lightgreen;
+  background-color: #ffcad4;
 }
 
 .bottomRight {
-  background-color: lightyellow;
+  background-color: #f4acb7;
 }

@@ -1,7 +1,12 @@
-.hexagon {
-  background-color: red;
-  width: 50px; /* adjust to control the size */
+.shape {
+  background-color: #9d8189;
+  min-width: 45px;
+  width: 5vw; /* adjust to control the size */
   aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+}
+
+.hexagon {
   clip-path: polygon(
     100% 50%,
     75% 93.3%,
@@ -13,16 +18,10 @@
 }
 
 .triangle {
-  background-color: red;
-  width: 50px; /* adjust to control the size */
-  aspect-ratio: 1;
   clip-path: polygon(93.3% 75%, 6.7% 75%, 50% 0%);
 }
 
 .square {
-  background-color: red;
-  width: 50px; /* adjust to control the size */
-  aspect-ratio: 1;
   clip-path: polygon(
     85.36% 85.36%,
     14.64% 85.36%,
@@ -32,8 +31,5 @@
 }
 
 .circle {
-  background-color: red;
-  width: 50px; /* adjust to control the size */
-  aspect-ratio: 1;
   clip-path: circle(50%);
 }

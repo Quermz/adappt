@@ -11,27 +11,46 @@ function Shape(props: shapeCoordinates) {
   function asPercentage(value: Number) {
     return value.toString() + "%";
   }
-  // function findShapeType() {
-  //   let [x, y] = [...coordinates];
-  //   if(x>=50 && test)
-  // }
+  function findShapeType() {
+    let [x, y] = [...coordinates];
+    if (x >= 50 && y > 50) {
+      return "square";
+    } else if (x > 50 && y < 50) {
+      return "hexagon";
+    } else if (x < 50 && y > 50) {
+      return "triangle";
+    }
+    return "circle";
+  }
+  function handleDrag(e: React.DragEvent<HTMLDivElement>) {
+    console.log(e);
+    let x = checkBounds((e.pageX / window.innerWidth) * 100);
+
+    let y = checkBounds((e.pageY / window.innerHeight) * 100);
+
+    setCoordinates([x, y]);
+  }
+
+  function checkBounds(coordinate: number) {
+    if (coordinate > 100) {
+      return 100;
+    } else if (coordinate < 0) {
+      return 0;
+    }
+    return coordinate;
+  }
   return (
     <div
+      className="shapeContainer"
       draggable="true"
-      onDragEnd={(e) => {
-        console.log(e);
-        setCoordinates([
-          ((e.pageX - 25) / window.innerWidth) * 100,
-          ((e.pageY - 25) / window.innerHeight) * 100,
-        ]);
-      }}
+      onDragEnd={handleDrag}
       style={{
         position: "absolute",
         left: asPercentage(coordinates[0]),
         top: asPercentage(coordinates[1]),
       }}
     >
-      <div className="circle" />
+      <div className={"shape " + findShapeType()} />
     </div>
   );
 }
