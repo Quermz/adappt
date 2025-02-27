@@ -16,11 +16,11 @@ function Shape(props: shapeCoordinates) {
   function findShapeType() {
     let [x, y] = [...coordinates];
     if (x >= 50 && y > 50) {
-      return "square";
+      return "triangle";
     } else if (x > 50 && y < 50) {
       return "hexagon";
     } else if (x < 50 && y > 50) {
-      return "triangle";
+      return "square";
     }
     return "circle";
   }
