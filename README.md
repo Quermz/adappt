@@ -4,6 +4,10 @@ Drag-and-Drop Shape Transformation Application
 
 ### Quick Start
 
+`npm i`
+
+To install dependenices
+
 `npm start`
 
 Runs the app in the development mode.\
